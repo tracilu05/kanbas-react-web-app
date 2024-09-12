@@ -5,6 +5,7 @@ export default function Labs(){
         <h3> Exercise 1.1</h3>
         <h4> Exercise 1.2</h4>  
         <h4> Exercise 1.3</h4> 
+        <h5> Exercise 1.4</h5> 
         </div>
     );
 }
