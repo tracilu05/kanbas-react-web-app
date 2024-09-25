@@ -6,10 +6,13 @@ export default function CourseStatus() {
         <br />
         <button>Import Existing Content</button> 
         <button>Choose Home Page</button>
+        <br />
         <button>View Course Stream</button>
         <button>New Announcements</button>
+        <br />
         <button>New Analytics</button>
         <button>View Course Notifications</button>
+        <br />
 
       </div>
   );}
