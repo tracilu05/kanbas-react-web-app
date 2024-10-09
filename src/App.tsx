@@ -1,3 +1,5 @@
+
+
 import React from "react";
 import Labs from "./Labs";
 import Kanbas from "./Kanbas";
@@ -7,6 +9,7 @@ export default function App() {
     <HashRouter>
     <div>
     <Routes>
+         <Route path="/Labs/*" element={<Labs />} />
          <Route path="/" element={<Navigate to="Kanbas" />} />
          <Route path="/Kanbas/*" element={<Kanbas />} />
         </Routes>
