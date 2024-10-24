@@ -1,6 +1,7 @@
 
 import PercentControlButton from "./PercentControlButton";
 import AssignmentControlButtons from "./AssignmentControlButtons";
+import AssignmentEditor from "./Editor"; 
 import { BsGripVertical } from "react-icons/bs";
 import { FaSearch } from "react-icons/fa";
 import { FaPlus } from "react-icons/fa";
