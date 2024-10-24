@@ -58,9 +58,7 @@ export default function Assignments() {
       <ul className="wd-assignment list-group rounded-0">
         <li className="wd-assignment list-group-item p-3 ps-1">
         <BsGripVertical className="me-2 fs-3" />
-        <Link to="/Assignments/Editor" >
-          A1
-        </Link>
+        <Link to="1">A1</Link>
           <AssignmentControlButtons />
           <h6>
              <br /> Multiple Modules | <b>Not available until</b> May 6 at 12:00am |
