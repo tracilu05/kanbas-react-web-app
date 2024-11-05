@@ -5,10 +5,15 @@ import AssignmentEditor from "./Editor";
 import { BsGripVertical } from "react-icons/bs";
 import { FaSearch } from "react-icons/fa";
 import { FaPlus } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import * as db from "../../Database";
+
 
 
 export default function Assignments() {
+  const { cid } = useParams();
+  const assignments = db.assignments;
+  const assignment = assignments
     return (
 
 <div id = "wd-assignments">
@@ -54,40 +59,20 @@ export default function Assignments() {
          <PercentControlButton />
          </div>
 
-
-      <ul className="wd-assignment list-group rounded-0">
+      {assignments.filter((assignment: any) => assignment.course === cid).map((assignment: any) => (
+      <ul key={assignment._id} className="wd-assignment list-group rounded-0">
         <li className="wd-assignment list-group-item p-3 ps-1">
         <BsGripVertical className="me-2 fs-3" />
-        <Link to="1">A1</Link>
+        <Link to={`${assignment._id}`} className= "text-decoration-none text-dark"> {assignment.title} </Link>
           <AssignmentControlButtons />
           <h6>
-             <br /> Multiple Modules | <b>Not available until</b> May 6 at 12:00am |
-           <br /> <b>Due</b> May 13 at 11:59 pm | 100 pts
+             <br /> Multiple Modules | <b>Not available until</b> {assignment.assigned} |
+           <br /> <b>Due</b> {assignment.due} | 100 pts
            </h6>
           </li>
 
-
-        <li className="wd-assignment list-group-item p-3 ps-1">
-        <BsGripVertical className="me-2 fs-3" />
-          A2
-          <AssignmentControlButtons />
-
-          <h6>
-             <br /> Multiple Modules | <b>Not available until</b> May 13 at 12:00am |
-            <br /> <b>Due</b> May 20 at 11:59 pm | 100 pts
-          </h6>
-          </li>
-        <li className="wd-assignment list-group-item p-3 ps-1">
-          <BsGripVertical className="me-2 fs-3" />
-          A3
-          <AssignmentControlButtons />
-          <h6>
-                <br /> Multiple Modules | <b>Not available until</b> May 20 at 12:00am |
-                 <br /> <b>Due</b> May 27 at 11:59 pm | 100 pts
-          </h6>
-          </li>
-      </ul>
-    </li>
+      </ul> ))}
+      </li> 
 
   </ul> 
   

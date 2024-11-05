@@ -1,12 +1,11 @@
-import { useLocation } from "react-router";
-import { Link } from "react-router-dom"; 
+import { useLocation } from "react-router-dom"; 
 export default function TOC() {
 
   const location = useLocation();
   const pathname = location.pathname;
    
   return (
-      <ul className="nav nav-pills">
+      <ul className="nav nav-pills" id="wd-toc">
       <li className="nav-item">
         <a id="wd-a" href="#/Labs" className="nav-link">
           Labs
@@ -36,7 +35,7 @@ export default function TOC() {
         </a>
       </li>
       <li className="nav-item">
-        <a id="wd-k" href="https://github.com/tracilu05" className="nav-link">
+        <a id="wd-github" href="https://github.com/tracilu05" target="_blank" className="nav-link">
           My GitHub
         </a>
       </li>

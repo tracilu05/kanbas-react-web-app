@@ -1,5 +1,13 @@
+import { Link, useLocation, useParams } from "react-router-dom";
+
+import * as db from "../../Database";
 export default function AssignmentEditor() {
+  const { cid, aid } = useParams();
+  const assignments = db.assignments;
+  const assignment = assignments.find((assignment) => assignment._id === aid);
+
     return (
+
 
       <div className="container" id="wd-assignments-editor">
       <div className="mb-3">
@@ -9,6 +17,7 @@ export default function AssignmentEditor() {
         <input
           type="text"
           className="form-control"
+          placeholder={assignment ? assignment.title : ""}
           id="wd-name"
           value="A1 - ENV + HTML"
         />
@@ -127,7 +136,10 @@ export default function AssignmentEditor() {
         </div>
       </div>
 
-      <div className="row mb-3">
+
+      <div className="text-end mt-5">
+
+      {/* <div className="row mb-3">
         <div className="col-md-6">
           <label htmlFor="wd-assign-to" className="form-label">
             Assign To
@@ -179,10 +191,12 @@ export default function AssignmentEditor() {
         </div>
       </div>
 
-      <div className="d-flex justify-content-end mt-3">
-        <button className="btn btn-secondary me-2">Cancel</button>
-        <button className="btn btn-success">Save</button>
-      </div>
+      <div className="d-flex justify-content-end mt-3"> */}
+      <Link to= {`/Kanbas/Courses/${cid}/Assignments`}>
+        <button type = "button" className="btn btn-secondary me-2">Cancel</button>
+        <button type = "button" className="btn btn-success">Save</button>
+        </Link>
+        </div>
     </div>
   );}
   
